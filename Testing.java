@@ -1,0 +1,85 @@
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static java.time.Duration.ofSeconds;
+import java.util.*;
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
+
+public class Testing {
+    @BeforeEach
+    public void setup(){
+        main main = new main();
+
+    }
+    @Test
+    public void EuclideanDistance(){
+        //Testing Euclidean Distance
+        System.out.println("Testing Euclidean Distance Function");
+        //Testing for range of error of 0.05
+        assertEquals(1.41f,(main.EuclideanDistance(1.0,1.0,2.0,2.0)),0.05);
+        assertEquals(20.39f,(main.EuclideanDistance(7.0,20.0,3.0,40.0)),0.05);
+        assertEquals(99999.5f,(main.EuclideanDistance(100000.0,2.0,0.5,0.222323)),0.05);
+        assertTimeout(ofSeconds(1), () -> main.EuclideanDistance(8,7,9,1));
+    }
+    @Test
+    public void BubbleSortASC(){
+        //Testing Bubbles Sort Ascending
+        //creating random generator to be used later
+        Random ran =new Random();
+        System.out.println("Testing Bubble Sort Ascending");
+        //Creating arrays to hold unsorted and sorted results
+        int[] Test1 = new int[]{ 1,4,3};
+        int[] Sorted1= new int[]{1,3,4};
+        //Testing Test array 1
+        Assert.assertArrayEquals(Sorted1,main.BubbleSortASC(Test1));
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortASC(Test1));
+        //Creating test array 2 and filling with random variables
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        //testing array 2
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortASC(Test2));
+        //Creating test array 3 and filling with random variables
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        //testing array 3
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortASC(Test3));
+
+    }
+    @Test
+    public void BubbleSortDES(){
+        //Testing Bubble Sort Descending
+        Random ran =new Random();
+        System.out.println("Testing Bubble Sort Descending");
+        //Creating test array 1 and sorted array 1
+        int[] Test1 = new int[]{ 1,4,3};
+        int[] Sorted1= new int[]{4,3,1};
+        //Testing array 1
+        Assert.assertArrayEquals(Sorted1,main.BubbleSortDES(Test1));
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortDES(Test1));
+        //Creating test array 2 and filling with random variables
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        //testing array 2
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortDES(Test2));
+        //Creating test array 3 and filling with random variables
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        //testing array 3
+        assertTimeout(ofSeconds(1), () -> main.BubbleSortDES(Test3));
+    }
+}
