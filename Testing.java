@@ -136,55 +136,29 @@ public class Testing {
      * These are to test ascending and descending Merge Sort.
      ********************************************************************************************/
     @Test
-    public void MergeSortASC() {
+    public void MergeSort() {
         // Testing Merge Sort Ascending
         Random ran = new Random();
         System.out.println("Testing Merge Sort Ascending");
 
         int[] Test1 = new int[] {1,4,3};
-        int[] Sorted1= new int[]{1,3,4};
-        Assert.assertArrayEquals(Sorted1,main.MergeSortASC(Test1));
-        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test1));
+        int[] Sorted1 = new int[] {1,3,4};
+        Assert.assertArrayEquals(Sorted1,main.MergeSort(Test1, 0, 2));
+        assertTimeout(ofSeconds(1), () -> main.MergeSort(Test1, 0, 2));
 
         int[] Test2= new int[100];
-        for(int i=0;i<Test2.length;i++)
+        for(int i = 0; i < Test2.length; i++)
         {
             Test2[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test2));
+        assertTimeout(ofSeconds(1), () -> main.MergeSort(Test2, 0, 99));
 
         int[] Test3= new int[1000];
-        for(int i=0;i<Test3.length;i++)
+        for(int i = 0; i < Test3.length; i++)
         {
             Test3[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test3));
-    }
-
-    @Test
-    public void MergeSortDES() {
-        // Testing Merge Sort Descending
-        Random ran = new Random();
-        System.out.println("Testing Merge Sort Descending");
-
-        int[] Test1 = new int[] {1,4,3};
-        int[] Sorted1= new int[] {1,3,4};
-        Assert.assertArrayEquals(Sorted1,main.MergeSortDES(Test1));
-        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test1));
-
-        int[] Test2= new int[100];
-        for(int i=0;i<Test2.length;i++)
-        {
-            Test2[i] = ran.nextInt();
-        }
-        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test2));
-
-        int[] Test3= new int[1000];
-        for(int i=0;i<Test3.length;i++)
-        {
-            Test3[i] = ran.nextInt();
-        }
-        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test3));
+        assertTimeout(ofSeconds(1), () -> main.MergeSort(Test3, 0, 999));
     }
 
     /*******************************************************************************************

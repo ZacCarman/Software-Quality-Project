@@ -152,7 +152,7 @@ public class main {
     * Merge Sort in ascending and descending order.
     ********************************************************************************************/
 
-    public static int[] MergeSortASC(int[] arr, int left, int right) {
+    public static int[] MergeSort(int[] arr, int left, int right) {
         // arr is the input array, left is left most index, and right is right most. mid is middle
 
         if (right > left) {
@@ -160,8 +160,8 @@ public class main {
             int mid = left + (right - 1) / 2;
 
             // recursively sort the first and second sub-arrays
-            MergeSortASC(arr, left, mid);
-            MergeSortASC(arr, mid + 1, right);
+            MergeSort(arr, left, mid);
+            MergeSort(arr, mid + 1, right);
 
             // merge the 2 sub-arrays
             merge(arr, left, mid, right);
@@ -169,16 +169,6 @@ public class main {
 
         // sorted array in ascending order
         int[] sorted = arr;
-        return sorted;
-    }
-
-    public static int[] MergeSortDES(int[] arr) {
-        // arr is the input array
-        int size = arr.length;
-
-        // sorted is the sorted array in descending order
-        int[] sorted = arr;
-
         return sorted;
     }
 
