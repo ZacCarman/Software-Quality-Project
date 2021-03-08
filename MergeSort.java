@@ -1,6 +1,6 @@
-class MergeSort {
+public class MergeSort {
 
-    int[] merge(int arr[], int left, int mid, int right) {
+    public static int[] merge(int arr[], int left, int mid, int right) {
 
         int sizeL=  mid - left + 1; // size of left sub-array
         int sizeR = right - mid; // size of right sub-array
@@ -48,7 +48,7 @@ class MergeSort {
         return arr;
     }
 
-    int[] sort(int[] arr, int left, int right) {
+    public static int[] sort(int[] arr, int left, int right) {
         // arr is the input array, left is left most index, and right is right most. mid is middle
 
         if (right > left) {
