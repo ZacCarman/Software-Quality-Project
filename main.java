@@ -145,11 +145,14 @@ public class main {
         //return array
         return sort;
     }
-    
+    /*
+
+
     /*Alexander Papachristu
 	 * sort function that builds a heap from an inputted array
 	 * that is sent to the heapify function
 	 */
+    /*
     public void sort(int arr[])
     {
         int arrLength = arr.length;
@@ -157,7 +160,7 @@ public class main {
         //Build heap
         for (int i = arrLength / 2 - 1; i >= 0; i--)
             heapify(arr, arrLength, i);
- 
+
         //Remove an element from the heap
         for (int i = arrLength - 1; i > 0; i--) {
             // Move current root to the last value of the array
@@ -174,6 +177,7 @@ public class main {
      * recursive function that uses heapsort to 
      * sort an inputted array 
      */
+    /*
     private void heapify(int arr[], int arrLength, int x)
     {
         int largest = x; //get index of the largest element
@@ -203,6 +207,7 @@ public class main {
 	 /*Alexander Papachristu
      *print the inputted array
      */
+    /*
     public void printArray(int arr[])
     {
         for(int i = 0; i < arr.length; i++)
@@ -216,6 +221,7 @@ public class main {
      * in idea to take an array that sorts from least to greatest
      * to make it sorted greatest to least.
      */
+    /*
     public int[] reverseArray(int arr[])
     {
     	int arrLen = arr.length;
@@ -229,5 +235,6 @@ public class main {
     	}
     	return revArr; //return the reversed array
     }
+    */
 
 }

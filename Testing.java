@@ -126,7 +126,8 @@ public class Testing {
         }
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
     }
-    
+
+    /*
     @Test
 	public void HeapSortTest()
 	{
@@ -157,6 +158,6 @@ public class Testing {
 		Assert.assertArrayEquals(reverseArr, main.reverseArray(sortedArr));
 		assertTimeout(ofSeconds(1), () -> main.sort(sortedArr));
 	}
-
+	*/
 
 }
