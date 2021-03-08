@@ -48,7 +48,7 @@ class MergeSort {
         return arr;
     }
 
-    int[] MergeSort(int[] arr, int left, int right) {
+    int[] sort(int[] arr, int left, int right) {
         // arr is the input array, left is left most index, and right is right most. mid is middle
 
         if (right > left) {
@@ -56,8 +56,8 @@ class MergeSort {
             int mid = left + (right - 1) / 2;
 
             // recursively sort the first and second sub-arrays
-            MergeSort(arr, left, mid);
-            MergeSort(arr, mid + 1, right);
+            sort(arr, left, mid);
+            sort(arr, mid + 1, right);
 
             // merge the 2 sub-arrays
             merge(arr, left, mid, right);

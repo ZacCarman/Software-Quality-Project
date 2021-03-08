@@ -144,22 +144,22 @@ public class Testing {
 
         int[] Test1 = new int[] {1,4,3,5,2};
         int[] Sorted1 = new int[] {1,2,3,4,5};
-        assertTimeout(ofSeconds(1), () -> msObj.MergeSort(Test1, 0, 4));
-        Assert.assertArrayEquals(Sorted1, msObj.MergeSort(Test1, 0, 4));
+        assertTimeout(ofSeconds(1), () -> msObj.sort(Test1, 0, 4));
+        Assert.assertArrayEquals(Sorted1, msObj.sort(Test1, 0, 4));
 
         int[] Test2= new int[100];
         for(int i = 0; i < Test2.length; i++)
         {
             Test2[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> msObj.MergeSort(Test2, 0, 99));
+        assertTimeout(ofSeconds(1), () -> msObj.sort(Test2, 0, 99));
 
         int[] Test3= new int[1000];
         for(int i = 0; i < Test3.length; i++)
         {
             Test3[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> msObj.MergeSort(Test3, 0, 999));
+        assertTimeout(ofSeconds(1), () -> msObj.sort(Test3, 0, 999));
     }
 
     /*******************************************************************************************
