@@ -166,15 +166,12 @@ public class main {
             // merge the 2 sub-arrays
             merge(arr, left, mid, right);
         }
-
-        // sorted array in ascending order
-        int[] sorted = arr;
-        return sorted;
+        return arr;
     }
 
     // merge function takes in the same kinds of arguments, but m_ denotes merge input
     // merges 2 sub-arrays arr[left ... mid], arr[mid+1 ... right]
-    public static void merge(int[] m_arr, int m_left, int m_mid, int m_right) {
+    public static int[] merge(int[] m_arr, int m_left, int m_mid, int m_right) {
 
         int sizeL=  m_mid - m_left + 1; // size of left sub-array
         int sizeR = m_right - m_mid; // size of right sub-array
@@ -207,18 +204,48 @@ public class main {
         }
 
         // see if there are remaining elements left in the sub-arrays to copy over
-        while (i < sizeL) {
+        while (i < sizeL - 1) {
             m_arr[k] = left[i];
             i++;
             k++;
         }
 
-        while (i < sizeR) {
+        while (i < sizeR - 1) {
             m_arr[k] = right[i];
             j++;
             k++;
         }
+
+        return m_arr;
     }
+
+    /*
+        // Merging the 2 sub-arrays
+        for (int x = m_left; i < m_right + 1; x++) {
+            if (i < sizeL && j < sizeR) {
+                if (left[i] < right[j]) {
+                    m_arr[i] = left[i];
+                    i++;
+                }
+                else {
+                    m_arr[i] = right[j];
+                    j++;
+                }
+            }
+
+            else if (i < sizeL) {
+                m_arr[i] = left[i];
+                i++;
+            }
+
+            else if (j < sizeR) {
+                m_arr[i] = right[j];
+                j++;
+            }
+        }
+
+        return m_arr;
+    */
 
     /*******************************************************************************************
     * END SCOTT

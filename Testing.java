@@ -133,18 +133,18 @@ public class Testing {
 
      /*******************************************************************************************
      * Scott
-     * These are to test ascending and descending Merge Sort.
+     * These are to test Merge Sort.
      ********************************************************************************************/
     @Test
     public void MergeSort() {
         // Testing Merge Sort Ascending
         Random ran = new Random();
-        System.out.println("Testing Merge Sort Ascending");
+        System.out.println("Testing Merge Sort");
 
-        int[] Test1 = new int[] {1,4,3};
-        int[] Sorted1 = new int[] {1,3,4};
-        Assert.assertArrayEquals(Sorted1,main.MergeSort(Test1, 0, 2));
-        assertTimeout(ofSeconds(1), () -> main.MergeSort(Test1, 0, 2));
+        int[] Test1 = new int[] {1,4,3,5,2};
+        int[] Sorted1 = new int[] {1,2,3,4,5};
+        assertTimeout(ofSeconds(1), () -> main.MergeSort(Test1, 0, 4));
+        Assert.assertArrayEquals(Sorted1, main.MergeSort(Test1, 0, 4));
 
         int[] Test2= new int[100];
         for(int i = 0; i < Test2.length; i++)
