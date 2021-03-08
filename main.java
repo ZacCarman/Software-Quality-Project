@@ -209,5 +209,25 @@ public class main {
             System.out.print(arr[i] + " ");
         System.out.println();
     }
+	
+	 /*
+     * Alexander Papachristu
+     * take an input of an array and use a loop to reverse an array
+     * in idea to take an array that sorts from least to greatest
+     * to make it sorted greatest to least.
+     */
+    public int[] reverseArray(int arr[])
+    {
+    	int arrLen = arr.length;
+    	int revArr[] = new int [arrLen]; //make a parallel array
+    	int count = 0;
+    	
+    	for(int i = arrLen-1; i>=0; i--) //count down from the highest index of original array to the lowest index
+    	{
+    		revArr[count] = arr[i]; //flip positions
+    		count++; //keep track of the position of the reversed array
+    	}
+    	return revArr; //return the reversed array
+    }
 
 }
