@@ -1,5 +1,6 @@
 import java.util.*;
 import java.lang.Math;
+
 public class main {
     /**
      * Creating a update for JDK
@@ -151,102 +152,7 @@ public class main {
     * Function to sort array of integers using
     * Merge Sort in ascending and descending order.
     ********************************************************************************************/
-
-    public static int[] MergeSort(int[] arr, int left, int right) {
-        // arr is the input array, left is left most index, and right is right most. mid is middle
-
-        if (right > left) {
-            // we want the middle point
-            int mid = left + (right - 1) / 2;
-
-            // recursively sort the first and second sub-arrays
-            MergeSort(arr, left, mid);
-            MergeSort(arr, mid + 1, right);
-
-            // merge the 2 sub-arrays
-            merge(arr, left, mid, right);
-        }
-        return arr;
-    }
-
-    // merge function takes in the same kinds of arguments, but m_ denotes merge input
-    // merges 2 sub-arrays arr[left ... mid], arr[mid+1 ... right]
-    public static int[] merge(int[] m_arr, int m_left, int m_mid, int m_right) {
-
-        int sizeL=  m_mid - m_left + 1; // size of left sub-array
-        int sizeR = m_right - m_mid; // size of right sub-array
-
-        //temporary sub-arrays for left and right
-        int left[] = new int[sizeL];
-        int right[] = new int[sizeR];
-
-        for (int i = 0; i < sizeL; ++i)
-            left[i] = m_arr[m_left + i];
-
-        for (int j = 0; j < sizeR; ++j)
-            right[j] = m_arr[m_mid + 1 + j];
-
-        int i = 0;
-        int j = 0;
-        int k = m_left;
-
-        // Merging the 2 sub-arrays
-        while (i < sizeL && j < sizeR) {
-            if (left[i] <= right[j]) {
-                m_arr[k] = left[i];
-                i++;
-            }
-            else {
-                m_arr[k] = right[j];
-                j++;
-            }
-            k++;
-        }
-
-        // see if there are remaining elements left in the sub-arrays to copy over
-        while (i < sizeL - 1) {
-            m_arr[k] = left[i];
-            i++;
-            k++;
-        }
-
-        while (i < sizeR - 1) {
-            m_arr[k] = right[i];
-            j++;
-            k++;
-        }
-
-        return m_arr;
-    }
-
-    /*
-        // Merging the 2 sub-arrays
-        for (int x = m_left; i < m_right + 1; x++) {
-            if (i < sizeL && j < sizeR) {
-                if (left[i] < right[j]) {
-                    m_arr[i] = left[i];
-                    i++;
-                }
-                else {
-                    m_arr[i] = right[j];
-                    j++;
-                }
-            }
-
-            else if (i < sizeL) {
-                m_arr[i] = left[i];
-                i++;
-            }
-
-            else if (j < sizeR) {
-                m_arr[i] = right[j];
-                j++;
-            }
-        }
-
-        return m_arr;
-    */
-
+    // see MergeSort.java
     /*******************************************************************************************
     * END SCOTT
     ********************************************************************************************/
