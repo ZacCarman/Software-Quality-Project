@@ -152,13 +152,23 @@ public class main {
     * Merge Sort in ascending and descending order.
     ********************************************************************************************/
 
-    public static int[] MergeSortASC(int[] arr) {
+    public static int[] MergeSortASC(int[] arr, int left, int right) {
         // arr is the input array, left is left most index, and right is right most. mid is middle
-        int size = arr.length;
 
-        // sorted is the sorted array in ascending order
+        if (right > left) {
+            // we want the middle point
+            int mid = left + (right - 1) / 2;
+
+            // recursively sort the first and second sub-arrays
+            MergeSortASC(arr, left, mid);
+            MergeSortASC(arr, mid + 1, right);
+
+            // merge the 2 sub-arrays
+            merge(arr, left, mid, right);
+        }
+
+        // sorted array in ascending order
         int[] sorted = arr;
-
         return sorted;
     }
 
@@ -175,8 +185,9 @@ public class main {
     // merge function takes in the same kinds of arguments, but m_ denotes merge input
     // merges 2 sub-arrays arr[left ... mid], arr[mid+1 ... right]
     public static void merge(int[] m_arr, int m_left, int m_mid, int m_right) {
-        int sizeL=  m_mid - m_left + 1;
-        int sizeR = m_right - m_mid;
+
+        int sizeL=  m_mid - m_left + 1; // size of left sub-array
+        int sizeR = m_right - m_mid; // size of right sub-array
 
         //temporary sub-arrays for left and right
         int left[] = new int[sizeL];
@@ -217,24 +228,6 @@ public class main {
             j++;
             k++;
         }
-    }
-
-    // sort function takes in the same kinds of arguments, but s_ denotes m_sort input
-    public static int[] m_sort(int[] s_arr, int s_left, int s_right) {
-
-        if (s_right > s_left) {
-            // we want the middle point
-            int s_mid = s_left + (s_right - 1) / 2;
-
-            // recursively sort the first and second sub-arrays
-            m_sort(s_arr, s_left, s_mid);
-            m_sort(s_arr, s_mid + 1, s_right);
-
-            // merge the 2 sub-arrays
-            merge(s_arr, s_left, s_mid, s_right);
-        }
-
-        return s_arr;
     }
 
     /*******************************************************************************************
