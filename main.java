@@ -152,16 +152,20 @@ public class main {
     * Merge Sort in ascending and descending order.
     */
 
-    public static int[] MergeSortASC(int[] sort) {
-        int size =sort.length;
+    public static int[] MergeSortASC(int[] arr) {
+        int size = arr.length;
 
-        return sort;
+        int[] sorted = arr;
+
+        return sorted;
     }
 
-    public static int[] MergeSortDES(int[] sort) {
-        int size =sort.length;
+    public static int[] MergeSortDES(int[] arr) {
+        int size = arr.length;
 
-        return sort;
+        int[] sorted = arr;
+
+        return sorted;
     }
 
     /* TEMPORARY TO FIX FUNCTION RETURNS
