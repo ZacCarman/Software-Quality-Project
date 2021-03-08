@@ -146,28 +146,34 @@ public class main {
         return sort;
     }
 
-    /*
-    * Scott
+    /*******************************************************************************************
+    * SCOTT
     * Function to sort array of integers using
     * Merge Sort in ascending and descending order.
-    */
+    ********************************************************************************************/
 
     public static int[] MergeSortASC(int[] arr) {
+        // arr is the input array
         int size = arr.length;
 
+        // sorted is the sorted array in ascending order
         int[] sorted = arr;
 
         return sorted;
     }
 
     public static int[] MergeSortDES(int[] arr) {
+        // arr is the input array
         int size = arr.length;
 
+        // sorted is the sorted array in descending order
         int[] sorted = arr;
 
         return sorted;
     }
-
+    /*******************************************************************************************
+    * END SCOTT
+    ********************************************************************************************/
     /* TEMPORARY TO FIX FUNCTION RETURNS
 
     /*Alexander Papachristu
