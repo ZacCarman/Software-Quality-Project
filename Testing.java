@@ -127,7 +127,8 @@ public class Testing {
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
     }
 
-    /*
+    /* TEMPORARY TO FIX FUNCTION RETURNS
+
     @Test
 	public void HeapSortTest()
 	{

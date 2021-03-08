@@ -145,8 +145,9 @@ public class main {
         //return array
         return sort;
     }
-    /*
 
+
+    /* TEMPORARY TO FIX FUNCTION RETURNS
 
     /*Alexander Papachristu
 	 * sort function that builds a heap from an inputted array
