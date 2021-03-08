@@ -7,7 +7,7 @@ public class main {
      * Author: Zachary Carman
      * ID: 100697844
      * Author: Alexander Papachristu
-     * ID:
+     * ID: 100693745
      * Author: Scott Garland
      * ID:
      * Author: Iliya Karac
@@ -144,6 +144,70 @@ public class main {
         }
         //return array
         return sort;
+    }
+    
+    /*Alexander Papachristu
+	 * sort function that builds a heap from an inputted array
+	 * that is sent to the heapify function
+	 */
+    public void sort(int arr[])
+    {
+        int arrLength = arr.length;
+
+        //Build heap
+        for (int i = arrLength / 2 - 1; i >= 0; i--)
+            heapify(arr, arrLength, i);
+ 
+        //Remove an element from the heap
+        for (int i = arrLength - 1; i > 0; i--) {
+            // Move current root to the last value of the array
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+ 
+            heapify(arr, i, 0);
+        }
+
+    }
+    
+    /*Alexander Papachristu
+     * recursive function that uses heapsort to 
+     * sort an inputted array 
+     */
+    private void heapify(int arr[], int arrLength, int x)
+    {
+        int largest = x; //get index of the largest element
+        int left = 2 * x+1; //get index of the left child from tree
+        int right = 2 * x + 2; //get index of the right child from tree
+
+        //check if left child is larger than the largest
+        if(left < arrLength && arr[left] > arr[largest])
+            largest = left;
+
+        //check if right child is larger than the largest
+        if(right < arrLength && arr[right] > arr[largest])
+            largest = right;
+
+        //check if largest is no longer the root
+        if(largest != x)
+        {
+        	//change largest value to the largest of the child values
+            int temp = arr[x];
+            arr[x] = arr[largest];
+            arr[largest] = temp;
+
+            heapify(arr,arrLength, largest); //recursively call heapify function
+        }
+    }
+
+    /*Alexander Papachristu
+     *print the inputted array
+     */
+    public void printArray(int arr[])
+    {
+        for(int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
     }
 
 }
