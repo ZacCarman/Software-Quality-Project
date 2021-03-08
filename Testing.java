@@ -131,10 +131,10 @@ public class Testing {
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
     }
 
-    /*
-    * Scott
-    * These are to test ascending and descending Merge Sort.
-    */
+     /*******************************************************************************************
+     * Scott
+     * These are to test ascending and descending Merge Sort.
+     ********************************************************************************************/
     @Test
     public void MergeSortASC() {
         // Testing Merge Sort Ascending
@@ -186,6 +186,10 @@ public class Testing {
         }
         assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test3));
     }
+
+    /*******************************************************************************************
+     * END SCOTT
+     ********************************************************************************************/
 
     /* TEMPORARY TO FIX FUNCTION RETURNS
 
