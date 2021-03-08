@@ -126,6 +126,37 @@ public class Testing {
         }
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
     }
+    
+    @Test
+	public void HeapSortTest()
+	{
+		System.out.println("Testing heap sorting functions");
+		int[] startingArr1 = {5, 16, 18, 3, 12, 1};
+		int[] sortedArr1 = {1, 3, 5, 12, 16, 18};
+		
+		Assert.assertArrayEquals(sortedArr1, main.sort(startingArr1));
+		assertTimeout(ofSeconds(1), () -> main.sort(startingArr1));
+		
+		
+		int[] startingArr2 = {16, 75, 8, 83, 122, 31};
+		int[] sortedArr2 = {8, 16, 31, 75, 83, 122};
+		
+		Assert.assertArrayEquals(sortedArr2, main.sort(startingArr2));
+		assertTimeout(ofSeconds(1), () -> main.sort(startingArr2));
+		
+	}
+	
+	@Test 
+	public void reverseTest()
+	{
+		System.out.println("Testing the reverse order function");
+		
+		int[] sortedArr = {1, 3, 5, 12, 16, 18};
+		int[] reverseArr= {18, 16, 12, 5, 3, 1};
+		
+		Assert.assertArrayEquals(reverseArr, main.reverseArray(sortedArr));
+		assertTimeout(ofSeconds(1), () -> main.sort(sortedArr));
+	}
 
 
 }
