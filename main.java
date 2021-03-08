@@ -146,6 +146,23 @@ public class main {
         return sort;
     }
 
+    /*
+    * Scott
+    * Function to sort array of integers using
+    * Merge Sort in ascending and descending order.
+    */
+
+    public static int[] MergeSortASC(int[] sort) {
+        int size =sort.length;
+
+        return sort;
+    }
+
+    public static int[] MergeSortDES(int[] sort) {
+        int size =sort.length;
+
+        return sort;
+    }
 
     /* TEMPORARY TO FIX FUNCTION RETURNS
 

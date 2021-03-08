@@ -14,6 +14,7 @@ public class Testing {
         main main = new main();
 
     }
+
     @Test
     public void EuclideanDistance(){
         //Testing Euclidean Distance
@@ -24,6 +25,7 @@ public class Testing {
         assertEquals(99999.5f,(main.EuclideanDistance(100000.0,2.0,0.5,0.222323)),0.05);
         assertTimeout(ofSeconds(1), () -> main.EuclideanDistance(8,7,9,1));
     }
+
     @Test
     public void BubbleSortASC(){
         //Testing Bubbles Sort Ascending
@@ -52,8 +54,8 @@ public class Testing {
         }
         //testing array 3
         assertTimeout(ofSeconds(1), () -> main.BubbleSortASC(Test3));
-
     }
+
     @Test
     public void BubbleSortDES(){
         //Testing Bubble Sort Descending
@@ -82,6 +84,7 @@ public class Testing {
         //testing array 3
         assertTimeout(ofSeconds(1), () -> main.BubbleSortDES(Test3));
     }
+
     @Test
     public void InsertionSortASC(){
         //Testing Insertion Sort Ascending
@@ -104,6 +107,7 @@ public class Testing {
         }
         assertTimeout(ofSeconds(1), () -> main.InsertionSortASC(Test3));
     }
+
     @Test
     public void InsertionSortDEC(){
         //Testing Insertion Sort Descending
@@ -125,6 +129,62 @@ public class Testing {
             Test3[i] = ran.nextInt();
         }
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
+    }
+
+    /*
+    * Scott
+    * These are to test ascending and descending Merge Sort.
+    */
+    @Test
+    public void MergeSortASC() {
+        // Testing Merge Sort Ascending
+        Random ran = new Random();
+        System.out.println("Testing Merge Sort Ascending");
+
+        int[] Test1 = new int[] {1,4,3};
+        int[] Sorted1= new int[]{1,3,4};
+        Assert.assertArrayEquals(Sorted1,main.MergeSortASC(Test1));
+        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test1));
+
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test2));
+
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.MergeSortASC(Test3));
+    }
+
+    @Test
+    public void MergeSortDES() {
+        // Testing Merge Sort Descending
+        Random ran = new Random();
+        System.out.println("Testing Merge Sort Descending");
+
+        int[] Test1 = new int[] {1,4,3};
+        int[] Sorted1= new int[] {1,3,4};
+        Assert.assertArrayEquals(Sorted1,main.MergeSortDES(Test1));
+        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test1));
+
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test2));
+
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.MergeSortDES(Test3));
     }
 
     /* TEMPORARY TO FIX FUNCTION RETURNS
