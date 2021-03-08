@@ -82,4 +82,50 @@ public class Testing {
         //testing array 3
         assertTimeout(ofSeconds(1), () -> main.BubbleSortDES(Test3));
     }
+    @Test
+    public void InsertionSortASC(){
+        //Testing Insertion Sort Ascending
+        Random ran =new Random();
+        System.out.println("Testing Insertion Sort Ascending");
+        int[] Test1 = new int[] {1,4,3};
+        int[] Sorted1= new int[]{1,3,4};
+        Assert.assertArrayEquals(Sorted1,main.InsertionSortASC(Test1));
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortASC(Test1));
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortASC(Test2));
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortASC(Test3));
+    }
+    @Test
+    public void InsertionSortDEC(){
+        //Testing Insertion Sort Descending
+        Random ran =new Random();
+        System.out.println("Testing Insertion Sort Descending");
+        int[] Test1 = new int[] {1,4,3};
+        int[] Sorted1= new int[]{4,3,1};
+        Assert.assertArrayEquals(Sorted1,main.InsertionSortDES(Test1));
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test1));
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test2));
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
+    }
+
+
 }

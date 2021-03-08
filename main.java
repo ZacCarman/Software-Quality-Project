@@ -99,5 +99,51 @@ public class main {
         //Return sorted array
         return Bubble;
     }
+    //ZAC
+    //function to sort array of integers using insertion
+    //sort in ascending order
+    public static int[] InsertionSortASC(int sort[]){
+        //get size of array
+        int size =sort.length;
+        //loop for size of array
+        for (int x =1; x<size;x++){
+            //key equals next element
+            int key = sort[x];
+            //i holds current index
+            int i = x-1;
+            //while i is greater then key more it forward in the array
+            while(i>0 && sort[i]>key){
+                sort[i+1]=sort[i];
+                i=i-1;
+
+            }
+            sort[i+1]=key;
+        }
+        //return array
+        return sort;
+    }
+    //ZAC
+    //function to sort array of integers using insertion
+    //sort in descending order
+    public static int[] InsertionSortDES(int sort[]){
+        //get size of array
+        int size =sort.length;
+        //loop for size of array
+        for (int x =1; x<size;x++){
+            //key equals next element
+            int key = sort[x];
+            //i holds current index
+            int i = x;
+            //while i is greater then key more it forward in the array
+            while(i>0 && sort[i-1]<key){
+                sort[i]=sort[i-1];
+                i=i-1;
+
+            }
+            sort[i]=key;
+        }
+        //return array
+        return sort;
+    }
 
 }
