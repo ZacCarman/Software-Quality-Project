@@ -153,7 +153,7 @@ public class main {
     ********************************************************************************************/
 
     public static int[] MergeSortASC(int[] arr) {
-        // arr is the input array
+        // arr is the input array, left is left most index, and right is right most. mid is middle
         int size = arr.length;
 
         // sorted is the sorted array in ascending order
@@ -171,6 +171,72 @@ public class main {
 
         return sorted;
     }
+
+    // merge function takes in the same kinds of arguments, but m_ denotes merge input
+    // merges 2 sub-arrays arr[left ... mid], arr[mid+1 ... right]
+    public static void merge(int[] m_arr, int m_left, int m_mid, int m_right) {
+        int sizeL=  m_mid - m_left + 1;
+        int sizeR = m_right - m_mid;
+
+        //temporary sub-arrays for left and right
+        int left[] = new int[sizeL];
+        int right[] = new int[sizeR];
+
+        for (int i = 0; i < sizeL; ++i)
+            left[i] = m_arr[m_left + i];
+
+        for (int j = 0; j < sizeR; ++j)
+            right[j] = m_arr[m_mid + 1 + j];
+
+        int i = 0;
+        int j = 0;
+        int k = m_left;
+
+        // Merging the 2 sub-arrays
+        while (i < sizeL && j < sizeR) {
+            if (left[i] <= right[j]) {
+                m_arr[k] = left[i];
+                i++;
+            }
+            else {
+                m_arr[k] = right[j];
+                j++;
+            }
+            k++;
+        }
+
+        // see if there are remaining elements left in the sub-arrays to copy over
+        while (i < sizeL) {
+            m_arr[k] = left[i];
+            i++;
+            k++;
+        }
+
+        while (i < sizeR) {
+            m_arr[k] = right[i];
+            j++;
+            k++;
+        }
+    }
+
+    // sort function takes in the same kinds of arguments, but s_ denotes m_sort input
+    public static int[] m_sort(int[] s_arr, int s_left, int s_right) {
+
+        if (s_right > s_left) {
+            // we want the middle point
+            int s_mid = s_left + (s_right - 1) / 2;
+
+            // recursively sort the first and second sub-arrays
+            m_sort(s_arr, s_left, s_mid);
+            m_sort(s_arr, s_mid + 1, s_right);
+
+            // merge the 2 sub-arrays
+            merge(s_arr, s_left, s_mid, s_right);
+        }
+
+        return s_arr;
+    }
+
     /*******************************************************************************************
     * END SCOTT
     ********************************************************************************************/
