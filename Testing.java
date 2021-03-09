@@ -133,43 +133,39 @@ public class Testing {
         assertTimeout(ofSeconds(1), () -> main.InsertionSortDES(Test3));
     }
 
-     /*******************************************************************************************
-     * Scott
-     * These are to test Merge Sort.
-     ********************************************************************************************/
-    /*
     @Test
-    public void MergeSort() {
+    public void MergeSort()
+    {
+        /*********************************************************
+         * CURRENT TESTS FAIL
+         * POSSIBLE REASON: WRONG RECURSION IMPLEMENTATION
+         * TO-DO: FIND CAUSE OF java.lang.StackOverflowError,
+         * FIX RECURSION, PASS TESTS.
+         * ********************************************************/
+
         // Testing Merge Sort Ascending
         Random ran = new Random();
         System.out.println("Testing Merge Sort");
 
         int[] Test1 = new int[] {1,4,3,5,2};
         int[] Sorted1 = new int[] {1,2,3,4,5};
-        assertTimeout(ofSeconds(1), () -> main.msort(Test1, 0, 4));
-        Assert.assertArrayEquals(Sorted1, main.msort(Test1, 0, 4));
+        Assert.assertArrayEquals(Sorted1, main.msort(Test1, 0, 4)); // checking expected output
+        assertTimeout(ofSeconds(1), () -> main.msort(Test1, 0, 4)); // checking time constraint
 
         int[] Test2= new int[100];
         for(int i = 0; i < Test2.length; i++)
         {
             Test2[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> main.msort(Test2, 0, 99));
+        assertTimeout(ofSeconds(1), () -> main.msort(Test2, 0, 99)); // checking larger time constraint
 
         int[] Test3= new int[1000];
         for(int i = 0; i < Test3.length; i++)
         {
             Test3[i] = ran.nextInt();
         }
-        assertTimeout(ofSeconds(1), () -> main.msort(Test3, 0, 999));
+        assertTimeout(ofSeconds(1), () -> main.msort(Test3, 0, 999)); // checking even larger time constraint
     }
-    */
-
-    /*******************************************************************************************
-     * END SCOTT
-     ********************************************************************************************/
-
-   
 
     @Test
 	public void HeapSortTest()
@@ -201,6 +197,5 @@ public class Testing {
 		Assert.assertArrayEquals(reverseArr, main.reverseArray(sortedArr));
 		assertTimeout(ofSeconds(1), () -> main.sort(sortedArr));
 	}
-	
 
 }

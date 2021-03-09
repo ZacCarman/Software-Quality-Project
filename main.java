@@ -154,6 +154,23 @@ public class main {
     ********************************************************************************************/
     // see MergeSort.java
 
+    public static int[] msort(int[] arr, int left, int right) {
+        // arr is the input array, left is left most index, and right is right most. mid is middle
+
+        if (right > left) {
+            // we want the middle point
+            int mid = left + (right - 1) / 2;
+
+            // recursively sort the first and second sub-arrays
+            msort(arr, left, mid);
+            msort(arr, mid + 1, right);
+
+            // merge the 2 sub-arrays
+            merge(arr, left, mid, right);
+        }
+        return arr;
+    }
+
     public static int[] merge(int arr[], int left, int mid, int right) {
 
         int sizeL=  mid - left + 1; // size of left sub-array
@@ -199,23 +216,6 @@ public class main {
             k++;
         }
 
-        return arr;
-    }
-
-    public static int[] msort(int[] arr, int left, int right) {
-        // arr is the input array, left is left most index, and right is right most. mid is middle
-
-        if (right > left) {
-            // we want the middle point
-            int mid = left + (right - 1) / 2;
-
-            // recursively sort the first and second sub-arrays
-            msort(arr, left, mid);
-            msort(arr, mid + 1, right);
-
-            // merge the 2 sub-arrays
-            merge(arr, left, mid, right);
-        }
         return arr;
     }
 
