@@ -152,7 +152,6 @@ public class main {
     * Function to sort array of integers using
     * Merge Sort in ascending and descending order.
     ********************************************************************************************/
-    // see MergeSort.java
 
     public static int[] merge(int arr[], int left, int mid, int right) {
 
@@ -185,7 +184,6 @@ public class main {
                 j++;
             }
             k++;
-            
         }
 
         // see if there are remaining elements left in the sub-arrays to copy over
@@ -200,7 +198,6 @@ public class main {
             j++;
             k++;
         }
-        
 
         return arr;
     }
@@ -209,19 +206,17 @@ public class main {
         // arr is the input array, left is left most index, and right is right most. mid is middle
 
         if (right > left) {
-            // we want the middle point
-            int mid = (left + (right)) / 2;
-            
+            // the middle point of the array
+            int mid = (left + right) / 2;
 
             // recursively sort the first and second sub-arrays
             msort(arr, left, mid);
-            
             msort(arr, mid + 1, right);
-            
 
             // merge the 2 sub-arrays
             merge(arr, left, mid, right);
         }
+
         return arr;
     }
 

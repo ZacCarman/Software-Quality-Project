@@ -136,14 +136,7 @@ public class Testing {
     @Test
     public void MergeSort()
     {
-        /*********************************************************
-         * CURRENT TESTS FAIL
-         * POSSIBLE REASON: WRONG RECURSION IMPLEMENTATION
-         * TO-DO: FIND CAUSE OF java.lang.StackOverflowError,
-         * FIX RECURSION, PASS TESTS.
-         * ********************************************************/
-
-        // Testing Merge Sort Ascending
+        // Testing Merge Sort
         Random ran = new Random();
         System.out.println("Testing Merge Sort");
 
