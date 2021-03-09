@@ -6,6 +6,8 @@ import static java.time.Duration.ofSeconds;
 import java.util.*;
 import java.util.ArrayList;
 
+
+
 import static org.junit.Assert.assertEquals;
 
 public class Testing {
@@ -135,6 +137,7 @@ public class Testing {
      * Scott
      * These are to test Merge Sort.
      ********************************************************************************************/
+    /*
     @Test
     public void MergeSort() {
         // Testing Merge Sort Ascending
@@ -160,12 +163,13 @@ public class Testing {
         }
         assertTimeout(ofSeconds(1), () -> main.msort(Test3, 0, 999));
     }
+    */
 
     /*******************************************************************************************
      * END SCOTT
      ********************************************************************************************/
 
-    /* TEMPORARY TO FIX FUNCTION RETURNS
+   
 
     @Test
 	public void HeapSortTest()
@@ -197,6 +201,6 @@ public class Testing {
 		Assert.assertArrayEquals(reverseArr, main.reverseArray(sortedArr));
 		assertTimeout(ofSeconds(1), () -> main.sort(sortedArr));
 	}
-	*/
+	
 
 }
