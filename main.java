@@ -308,7 +308,9 @@ public class main {
     	return revArr; //return the reversed array
     }
 	
-	//Iliya Karac
+	
+	
+    //Iliya Karac
     //Function sorts using the selection sort method in Ascending order
     //it will sort the given int array and return an instance of that array for ease of testing
 	
@@ -345,10 +347,12 @@ public class main {
 		return list;
 	}
 	
-		//ILIYA
+	
+	
+    //Iliya Karac
     //Function sorts using the quick sort method in Ascending order
     //it will sort the given int array and return an instance of that array for ease of testing
-	//in this version of the quick sort we set the pivot as the highest index
+    //in this version of the quick sort we set the pivot as the highest index
 	
 	public static int[] quick_sort(int[] arr, int low, int high){
 		//this if statement checks if the lower index is less than the higher it not it is considered a base case and ends a branch of recursion
