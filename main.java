@@ -222,21 +222,19 @@ public class main {
     /*******************************************************************************************
     * END SCOTT
     ********************************************************************************************/
-    /* TEMPORARY TO FIX FUNCTION RETURNS
-
-    /*Alexander Papachristu
+   
+	/*Alexander Papachristu
 	 * sort function that builds a heap from an inputted array
 	 * that is sent to the heapify function
 	 */
-    /*
-    public void sort(int arr[])
+    public int[] sort(int arr[])
     {
         int arrLength = arr.length;
 
         //Build heap
         for (int i = arrLength / 2 - 1; i >= 0; i--)
             heapify(arr, arrLength, i);
-
+ 
         //Remove an element from the heap
         for (int i = arrLength - 1; i > 0; i--) {
             // Move current root to the last value of the array
@@ -247,14 +245,14 @@ public class main {
             heapify(arr, i, 0);
         }
 
+        return arr;
     }
     
     /*Alexander Papachristu
      * recursive function that uses heapsort to 
      * sort an inputted array 
      */
-    /*
-    private void heapify(int arr[], int arrLength, int x)
+    public void heapify(int arr[], int arrLength, int x)
     {
         int largest = x; //get index of the largest element
         int left = 2 * x+1; //get index of the left child from tree
@@ -279,25 +277,22 @@ public class main {
             heapify(arr,arrLength, largest); //recursively call heapify function
         }
     }
-	
-	 /*Alexander Papachristu
+
+    /*Alexander Papachristu
      *print the inputted array
      */
-    /*
     public void printArray(int arr[])
     {
         for(int i = 0; i < arr.length; i++)
             System.out.print(arr[i] + " ");
         System.out.println();
     }
-	
-	 /*
+    /*
      * Alexander Papachristu
      * take an input of an array and use a loop to reverse an array
      * in idea to take an array that sorts from least to greatest
      * to make it sorted greatest to least.
      */
-    /*
     public int[] reverseArray(int arr[])
     {
     	int arrLen = arr.length;
@@ -311,6 +306,5 @@ public class main {
     	}
     	return revArr; //return the reversed array
     }
-    */
 
 }
