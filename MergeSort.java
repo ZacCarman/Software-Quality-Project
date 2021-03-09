@@ -4,6 +4,8 @@ public class MergeSort {
 
     public static int[] merge(int arr[], int left, int mid, int right) {
 
+        //left, right, and mid are associated indices
+
         int sizeL=  mid - left + 1; // size of left sub-array
         int sizeR = right - mid; // size of right sub-array
 
