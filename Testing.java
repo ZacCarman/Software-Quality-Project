@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Testing {
     @BeforeEach
@@ -189,6 +190,57 @@ public class Testing {
 		
 		Assert.assertArrayEquals(reverseArr, main.reverseArray(sortedArr));
 		assertTimeout(ofSeconds(1), () -> main.sort(sortedArr));
+	}
+	
+	@Test
+	public void select_sort_test() {
+		
+		//make an unsorted list
+		int[] unsorted = {7, 22, 38, 7, 7, 1, 3};
+		//make the corresponding sorted list
+		int[] sorted = {1, 3, 7, 7, 7, 22, 38};
+		//run the sort algorithm 
+		int[] maybe_sorted = main.select_sort(unsorted);
+		boolean match = true;
+		
+		//loop through the sorted list and maybe sorted list checking to see if they do not match in which case it will be flagged 
+		for (int z = 0; z < maybe_sorted.length; z++) {
+			if (maybe_sorted[z] != sorted[z]) {
+				
+				match = false;
+				
+			}
+			
+		}
+		
+		assertTrue(match);
+	}
+	
+	@Test
+	public void quick_sort_test() {
+		
+		//make an unsorted list
+		int[] unsorted = {7, 22, 38, 7, 7, 1, 3};
+		//make the corresponding sorted list
+		int[] sorted = {1, 3, 7, 7, 7, 22, 38};
+		//take the length of either array and subtract 1  to get the index of the last value 
+		int arraylen = unsorted.length - 1; 
+		
+		//run the sort algorithm 
+		int[] maybe_sorted = main.quick_sort(unsorted,0,arraylen );
+		boolean match = true;
+		
+		//loop through the sorted list and maybe sorted list checking to see if they do not match in which case it will be flagged 
+		for (int z = 0; z <= arraylen; z++) {
+			if (maybe_sorted[z] != sorted[z]) {
+				
+				match = false;
+				
+			}
+			
+		}
+		
+		assertTrue(match);
 	}
 
 }
