@@ -307,5 +307,91 @@ public class main {
     	}
     	return revArr; //return the reversed array
     }
+	
+	//Iliya Karac
+    //Function sorts using the selection sort method in Ascending order
+    //it will sort the given int array and return an instance of that array for ease of testing
+	
+	public static int[] select_sort(int[] list) {
+		
+		//initial variables length is use for forloop limit and index will hold the index of smallest item
+		int length = list.length;
+		int index = 0;
+		
+		//we go through the array every time initializing the current item as the smallest
+		for(int x = 0; x < length - 1; x++) {
+			int min =list[x];
+		
+			// we start looping through the list again starting at the index right after current x
+			for (int i = x + 1; i <length; i++) {
+				// we find the smallest item and save its  value and index
+				if(list[i]<min) {
+					min = list[i];
+					index = i;
+					
+				}
+			}
+			
+			//we swap the current value at index x with the smallest value and the value at x goes to index of the samllest value
+			int swap_val = list[x];
+			list[x] = min;
+			list[index] = swap_val;
+			
+		}
+		
+		
+		
+		// return a list for ease of testing
+		return list;
+	}
+	
+		//ILIYA
+    //Function sorts using the quick sort method in Ascending order
+    //it will sort the given int array and return an instance of that array for ease of testing
+	//in this version of the quick sort we set the pivot as the highest index
+	
+	public static int[] quick_sort(int[] arr, int low, int high){
+		//this if statement checks if the lower index is less than the higher it not it is considered a base case and ends a branch of recursion
+		if(low < high)
+		{
+			// the function is called to find a pivot and rearrange the array 
+			int index = split(arr, low, high);
+			
+			// recursively sort the list bellow the pivot and above the pivot including the pivot
+			quick_sort(arr, low, index-1);
+			quick_sort(arr, index+1, high);
+		}
+		return arr;
+	}
+	
+	// splits the array based on the pivot, all smaller or equal pivot index and all greater are placed after
+	public static int split(int[]arr, int low, int high)
+	{
+		//initial values are set
+		int pivot = arr[high];
+		int i = low-1;
+		int temp = 0;
+		
+		// run through the array starting from low index ending before high (the pivot)
+		for(int x = low; x<high; x++){
+			//when item at x is less than the pivot we push it behind the current x this ensures that the small values stay bellow the index of pivot
+			if(arr[x] < pivot)
+			{
+				i++;
+				temp = arr[i];
+				arr[i] = arr[x];
+				arr[x] = temp;
+			}
+		}
+		
+		//we must now put the pivot in the correct location and return the index of pivot
+		temp = arr[i+1];
+		arr[i+1] = arr[high];
+		arr[high] = temp;
+		
+		//we know that index i will end at the last value that is smaller than pivot so we place it right after i and put the value at i+1 at the end
+		
+		return (i+1);
+	}
 
 }
