@@ -227,7 +227,7 @@ public class main {
 	 * sort function that builds a heap from an inputted array
 	 * that is sent to the heapify function
 	 */
-    public int[] sort(int arr[])
+    public static int[] sort(int arr[])
     {
         int arrLength = arr.length;
 
@@ -252,7 +252,7 @@ public class main {
      * recursive function that uses heapsort to 
      * sort an inputted array 
      */
-    public void heapify(int arr[], int arrLength, int x)
+    public static void heapify(int arr[], int arrLength, int x)
     {
         int largest = x; //get index of the largest element
         int left = 2 * x+1; //get index of the left child from tree
@@ -293,7 +293,7 @@ public class main {
      * in idea to take an array that sorts from least to greatest
      * to make it sorted greatest to least.
      */
-    public int[] reverseArray(int arr[])
+    public static int[] reverseArray(int arr[])
     {
     	int arrLen = arr.length;
     	int revArr[] = new int [arrLen]; //make a parallel array
