@@ -21,6 +21,167 @@ public class main {
 
 
     //ZAC
+    //Function to generate sudo random value from 0-range
+    //Creating value to hold seed
+    private static long seed=0;
+    //Creating value to make adjustments for the potential of quick consecutive calls.
+    private static int adjust=0;
+    public static long NewRandom(int range){
+        //Creating calendar object
+        Calendar calendar =Calendar.getInstance();
+        //Generate initial value by getting time
+        long Value = calendar.getTimeInMillis() +calendar.get(Calendar.SECOND)
+                +(60* calendar.get(Calendar.MINUTE))
+                +(3600* calendar.get(Calendar.HOUR));
+        //making adjustments to value in case of quick calls
+        switch(adjust){
+            case(0):
+                Value=Value/800;
+                adjust++;
+                break;
+            case(1):
+                Value=Value/1000212;
+                adjust++;
+                break;
+            case(2):
+                Value=Value/1333350222;
+                adjust++;
+                break;
+            case(3):
+                Value=Value/355036892;
+                adjust++;
+                break;
+            case(4):
+                Value=Value/758016781;
+                adjust++;
+                break;
+            case(5):
+                Value=Value/567;
+                adjust++;
+                break;
+            case(6):
+                Value=Value/23412412;
+                adjust++;
+                break;
+            case(7):
+                Value=Value/120975;
+                adjust++;
+                break;
+            default:
+                adjust=0;
+        }
+        //Set seed
+        if(seed ==0){
+            seed= Value;
+        }
+        //Return value modulo by the range
+        return ((Value+seed)%range);
+    }
+
+
+    //ZAC
+    //Function to a simple game of rock paper scissors
+    //Code adapted from Assignment 1
+    public static boolean RPSresult(int user, int computer){
+
+        if (user==computer) {
+            //print tie
+            System.out.println("It's a tie");
+            return false;
+
+
+        } else {
+            //if user picks Rock and the computer picks paper computer wins
+            if (user == 1) {
+                if (computer == 2) {
+                    //print computer wins
+                    System.out.println("Computer Wins; Paper covers Rock");
+                    return false;
+                } else {
+                    //if user picks Rock and computer picks Scissors
+                    //print user wins
+                    System.out.println("You Win; Rock crushes Scissors");
+                    return true;
+                }
+
+            } else {
+                //if user picks Paper and computer pick Rock user wins
+                if (user == 2) {
+                    if (computer == 1) {
+                        //print user wins
+                        System.out.println("You Win; Paper covers Rock");
+                        return true;
+                    } else {
+                        //if user pick Paper and the computer picks Scissors computer wins
+                        //print user wins
+                        System.out.println("Computer Wins; Scissors cuts Paper");
+                        return false;
+                    }
+                } else {
+                    //User picks Scissors and computer picks rock Computer wins
+                    if (computer == 1) {
+                        System.out.println("Computer Wins; Rock crushes Scissors");
+                        return false;
+                    } else {
+                        //If user picks Scissors and computer picks Rock
+                        //Print user wins
+                        System.out.println("You Win; Scissors cuts Paper");
+                        return true;
+                    }
+                }
+            }
+
+        }
+
+    }
+    //ZAC
+    //Function to a simple game of rock paper scissors
+    //Code adapted from Assignment 1
+    public static boolean RockPaperScissors(String input){
+        //making input all lower case
+        input = input.toLowerCase();
+        //initialize Random
+        System.out.println(input);
+        Random random =new Random();
+        //Initialisze user integer
+        int user=0;
+        //Switch statement to set user value
+        switch(input){
+            case("rock"):
+                user=1;
+                break;
+            case("paper"):
+                user=2;
+                break;
+            case("scissors"):
+                user=3;
+                break;
+            default:
+                System.out.println("Incorrect Input Returning False");
+                return false;
+        }
+        //Setting computer value
+        int computer = random.nextInt(3) + 1;
+        switch (computer) {
+            case (1):
+                System.out.println("Computer picked Rock");
+                break;
+            case (2):
+                System.out.println("Computer picked Paper");
+                break;
+            case (3):
+                System.out.println("Computer picked Scissors");
+                break;
+        }
+        boolean Win;
+        //finding who won
+        Win=RPSresult(user,computer);
+        //returning results
+        return Win;
+
+    }
+
+    //ZAC
     //Function to find Euclidean Distance by passing
     // four double values and returning a single
     //double distance
@@ -148,10 +309,10 @@ public class main {
     }
 
     /*******************************************************************************************
-    * SCOTT
-    * Function to sort array of integers using
-    * Merge Sort in ascending and descending order.
-    ********************************************************************************************/
+     * SCOTT
+     * Function to sort array of integers using
+     * Merge Sort in ascending and descending order.
+     ********************************************************************************************/
 
     public static int[] merge(int arr[], int left, int mid, int right) {
 
@@ -221,13 +382,13 @@ public class main {
     }
 
     /*******************************************************************************************
-    * END SCOTT
-    ********************************************************************************************/
-   
-	/*Alexander Papachristu
-	 * sort function that builds a heap from an inputted array
-	 * that is sent to the heapify function
-	 */
+     * END SCOTT
+     ********************************************************************************************/
+
+    /*Alexander Papachristu
+     * sort function that builds a heap from an inputted array
+     * that is sent to the heapify function
+     */
     public static int[] sort(int arr[])
     {
         int arrLength = arr.length;
@@ -235,23 +396,23 @@ public class main {
         //Build heap
         for (int i = arrLength / 2 - 1; i >= 0; i--)
             heapify(arr, arrLength, i);
- 
+
         //Remove an element from the heap
         for (int i = arrLength - 1; i > 0; i--) {
             // Move current root to the last value of the array
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
- 
+
             heapify(arr, i, 0);
         }
 
         return arr;
     }
-    
+
     /*Alexander Papachristu
-     * recursive function that uses heapsort to 
-     * sort an inputted array 
+     * recursive function that uses heapsort to
+     * sort an inputted array
      */
     public static void heapify(int arr[], int arrLength, int x)
     {
@@ -270,7 +431,7 @@ public class main {
         //check if largest is no longer the root
         if(largest != x)
         {
-        	//change largest value to the largest of the child values
+            //change largest value to the largest of the child values
             int temp = arr[x];
             arr[x] = arr[largest];
             arr[largest] = temp;
@@ -296,106 +457,106 @@ public class main {
      */
     public static int[] reverseArray(int arr[])
     {
-    	int arrLen = arr.length;
-    	int revArr[] = new int [arrLen]; //make a parallel array
-    	int count = 0;
-    	
-    	for(int i = arrLen-1; i>=0; i--) //count down from the highest index of original array to the lowest index
-    	{
-    		revArr[count] = arr[i]; //flip positions
-    		count++; //keep track of the position of the reversed array
-    	}
-    	return revArr; //return the reversed array
+        int arrLen = arr.length;
+        int revArr[] = new int [arrLen]; //make a parallel array
+        int count = 0;
+
+        for(int i = arrLen-1; i>=0; i--) //count down from the highest index of original array to the lowest index
+        {
+            revArr[count] = arr[i]; //flip positions
+            count++; //keep track of the position of the reversed array
+        }
+        return revArr; //return the reversed array
     }
-	
-	
-	
+
+
+
     //Iliya Karac
     //Function sorts using the selection sort method in Ascending order
     //it will sort the given int array and return an instance of that array for ease of testing
-	
-	public static int[] select_sort(int[] list) {
-		
-		//initial variables length is use for forloop limit and index will hold the index of smallest item
-		int length = list.length;
-		int index = 0;
-		
-		//we go through the array every time initializing the current item as the smallest
-		for(int x = 0; x < length - 1; x++) {
-			int min =list[x];
-		
-			// we start looping through the list again starting at the index right after current x
-			for (int i = x + 1; i <length; i++) {
-				// we find the smallest item and save its  value and index
-				if(list[i]<min) {
-					min = list[i];
-					index = i;
-					
-				}
-			}
-			
-			//we swap the current value at index x with the smallest value and the value at x goes to index of the samllest value
-			int swap_val = list[x];
-			list[x] = min;
-			list[index] = swap_val;
-			
-		}
-		
-		
-		
-		// return a list for ease of testing
-		return list;
-	}
-	
-	
-	
+
+    public static int[] select_sort(int[] list) {
+
+        //initial variables length is use for forloop limit and index will hold the index of smallest item
+        int length = list.length;
+        int index = 0;
+
+        //we go through the array every time initializing the current item as the smallest
+        for(int x = 0; x < length - 1; x++) {
+            int min =list[x];
+
+            // we start looping through the list again starting at the index right after current x
+            for (int i = x + 1; i <length; i++) {
+                // we find the smallest item and save its  value and index
+                if(list[i]<min) {
+                    min = list[i];
+                    index = i;
+
+                }
+            }
+
+            //we swap the current value at index x with the smallest value and the value at x goes to index of the samllest value
+            int swap_val = list[x];
+            list[x] = min;
+            list[index] = swap_val;
+
+        }
+
+
+
+        // return a list for ease of testing
+        return list;
+    }
+
+
+
     //Iliya Karac
     //Function sorts using the quick sort method in Ascending order
     //it will sort the given int array and return an instance of that array for ease of testing
     //in this version of the quick sort we set the pivot as the highest index
-	
-	public static int[] quick_sort(int[] arr, int low, int high){
-		//this if statement checks if the lower index is less than the higher it not it is considered a base case and ends a branch of recursion
-		if(low < high)
-		{
-			// the function is called to find a pivot and rearrange the array 
-			int index = split(arr, low, high);
-			
-			// recursively sort the list bellow the pivot and above the pivot including the pivot
-			quick_sort(arr, low, index-1);
-			quick_sort(arr, index+1, high);
-		}
-		return arr;
-	}
-	
-	// splits the array based on the pivot, all smaller or equal pivot index and all greater are placed after
-	public static int split(int[]arr, int low, int high)
-	{
-		//initial values are set
-		int pivot = arr[high];
-		int i = low-1;
-		int temp = 0;
-		
-		// run through the array starting from low index ending before high (the pivot)
-		for(int x = low; x<high; x++){
-			//when item at x is less than the pivot we push it behind the current x this ensures that the small values stay bellow the index of pivot
-			if(arr[x] < pivot)
-			{
-				i++;
-				temp = arr[i];
-				arr[i] = arr[x];
-				arr[x] = temp;
-			}
-		}
-		
-		//we must now put the pivot in the correct location and return the index of pivot
-		temp = arr[i+1];
-		arr[i+1] = arr[high];
-		arr[high] = temp;
-		
-		//we know that index i will end at the last value that is smaller than pivot so we place it right after i and put the value at i+1 at the end
-		
-		return (i+1);
-	}
+
+    public static int[] quick_sort(int[] arr, int low, int high){
+        //this if statement checks if the lower index is less than the higher it not it is considered a base case and ends a branch of recursion
+        if(low < high)
+        {
+            // the function is called to find a pivot and rearrange the array
+            int index = split(arr, low, high);
+
+            // recursively sort the list bellow the pivot and above the pivot including the pivot
+            quick_sort(arr, low, index-1);
+            quick_sort(arr, index+1, high);
+        }
+        return arr;
+    }
+
+    // splits the array based on the pivot, all smaller or equal pivot index and all greater are placed after
+    public static int split(int[]arr, int low, int high)
+    {
+        //initial values are set
+        int pivot = arr[high];
+        int i = low-1;
+        int temp = 0;
+
+        // run through the array starting from low index ending before high (the pivot)
+        for(int x = low; x<high; x++){
+            //when item at x is less than the pivot we push it behind the current x this ensures that the small values stay bellow the index of pivot
+            if(arr[x] < pivot)
+            {
+                i++;
+                temp = arr[i];
+                arr[i] = arr[x];
+                arr[x] = temp;
+            }
+        }
+
+        //we must now put the pivot in the correct location and return the index of pivot
+        temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+
+        //we know that index i will end at the last value that is smaller than pivot so we place it right after i and put the value at i+1 at the end
+
+        return (i+1);
+    }
 
 }
