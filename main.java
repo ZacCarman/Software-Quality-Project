@@ -18,7 +18,70 @@ public class main {
      *
      *
      */
+    //ZAC
+    //Function to return every index a value is at
+    public static ArrayList<Integer> IndexCollect(int[] array,int value){
+        //creating arraylist
+        ArrayList<Integer> indexes =new ArrayList<Integer>();
+        //loop for length of array
+        for (int x=0; x<array.length;x++){
+            //if array equals value append index to list
+            if(array[x]==value){
+                indexes.add(x);
+            }
+        }
+        //return list
+        return indexes;
+    }
+    //ZAC
+    //Function to return min value of integer array
+    public static int MIN(int[] array){
+        //Set min to maximum possible value
+        int min= Integer.MAX_VALUE;
+        //loop for all array values
+        for (int x=0; x<array.length;x++){
+            //if value is less then min set min to value
+            if(array[x]<min){
+                min=array[x];
+            }
+        }
+        //return min
+        return min;
+    }
 
+    //ZAC
+    //Function to return max value of integer array
+    public static int MAX(int[] array){
+        //Set max to minimum possible value
+        int max= Integer.MIN_VALUE;
+        //loop for all array values
+        for (int x=0; x<array.length;x++){
+            //if value is greater then max set max to value
+            if(array[x]>max){
+                max=array[x];
+            }
+        }
+        //return max
+        return max;
+    }
+
+    //ZAC
+    //Function to shuffle and return any int array
+    public static int[] shuffle(int[] shuffle){
+        //getting length
+        int length=shuffle.length;
+        //loop for length in reverse
+        for(int x=length-1; x>0;x--){
+            //generate random indexes
+            int index =(int)NewRandom(x+1);
+            //Swap
+            int hold = shuffle[index];
+            shuffle[index]=shuffle[x];
+            shuffle[x]=hold;
+        }
+
+        return shuffle;
+    }
 
     //ZAC
     //Function to generate sudo random value from 0-range

@@ -1,7 +1,8 @@
+import org.hamcrest.core.IsEqual;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.assertTimeout;
+
 import static java.time.Duration.ofSeconds;
 import java.util.*;
 import java.util.ArrayList;
@@ -10,12 +11,99 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Testing {
     @BeforeEach
     public void setup(){
         main main = new main();
 
+    }
+    @Test
+    public void indexcollect(){
+        Random ran =new Random();
+        //Testing indexcollect
+        System.out.println("Testing Index collector");
+        int[] Test1 = new int[]{ 1,4,3,1};
+        ArrayList<Integer> index1=new ArrayList<Integer>();
+        index1.add(0);
+        index1.add(3);
+
+
+        assertTrue(index1.equals(main.IndexCollect(Test1,1)));
+        assertTimeout(ofSeconds(1), () -> main.IndexCollect(Test1,1));
+        //Creating test array 2 and filling with random variables
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        //testing array 2
+        assertTimeout(ofSeconds(1), () -> main.IndexCollect(Test2,0));
+        //Creating test array 3 and filling with random variables
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        //testing array 3
+        assertTimeout(ofSeconds(1), () -> main.IndexCollect(Test3,0));
+    }
+    @Test
+    public void MIN(){
+        //Testing min
+        System.out.println("Testing Min");
+
+        int[] Test1 = new int[]{ 1,4,3};
+        assertEquals(1,main.MIN(Test1));
+        assertTimeout(ofSeconds(1), () -> main.MIN(Test1));
+        int[] Test2 = new int[]{ 2,-100,10000,232423,566,11,-10023,343};
+        assertEquals(-10023,main.MIN(Test2));
+        assertTimeout(ofSeconds(1), () -> main.MIN(Test2));
+    }
+    @Test
+    public void MAX(){
+        //Testing max
+        System.out.println("Testing Max");
+
+        int[] Test1 = new int[]{ 1,4,3};
+        assertEquals(4,main.MAX(Test1));
+        assertTimeout(ofSeconds(1), () -> main.MAX(Test1));
+        int[] Test2 = new int[]{ 2,-100,10000,232423,566,11,-10023,343};
+        assertEquals(232423,main.MAX(Test2));
+        assertTimeout(ofSeconds(1), () -> main.MAX(Test2));
+    }
+
+    @Test
+    public void shuffle(){
+        //testing shuffle
+        System.out.println("Testing Shuffle function");
+
+        //creating random generator to be used later
+        Random ran =new Random();
+        //Creating arrays to hold unsorted and sorted results
+        int[] Test1 = new int[]{ 1,4,3,3,4,1,2};
+        int[] Shuffle1=new int[]{ 1,4,3,3,4,1,2};
+        //Testing Test array 1
+        main.shuffle(Test1);
+        assertFalse(Arrays.equals(Test1, Shuffle1));
+        assertTimeout(ofSeconds(1), () -> main.shuffle(Test1));
+        //Creating test array 2 and filling with random variables
+        int[] Test2= new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        //testing array 2
+        assertTimeout(ofSeconds(1), () -> main.shuffle(Test2));
+        //Creating test array 3 and filling with random variables
+        int[] Test3= new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        //testing array 3
+        assertTimeout(ofSeconds(1), () -> main.shuffle(Test3));
     }
     @Test
     public void NewRandom(){
