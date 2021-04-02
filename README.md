@@ -1,6 +1,11 @@
 # Software-Quality-Project
 
+## Zac
 
+### IndexCollect
+This function thats in an integer array of any size and an integer value. The function will return and integer arraylsit of all indexes the entered value appears in the given array. 
+Testing: 
+Testing of this function includes testing for both correctness and timeout condidtions. 
 
 
 
