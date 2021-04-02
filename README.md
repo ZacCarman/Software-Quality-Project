@@ -3,12 +3,58 @@
 ## Zac
 
 ### IndexCollect
-This function thats in an integer array of any size and an integer value. The function will return and integer arraylsit of all indexes the entered value appears in the given array. 
-Testing: 
-Testing of this function includes testing for both correctness and timeout condidtions. 
+This function takes in an integer array of any size and an integer value. The function will return and integer arraylist of all indexes the entered value appears in the given array.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
+
+### MIN
+This function takes in an integer array of any size and returns an integer. This integer will hold the value of the minimum value from the array.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case simply passes through expected values.
+
+### MAX
+This function takes in an integer array of any size and returns an integer. This integer will hold the value of the maximum value from the array.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case simply passes through expected values.
+
+### shuffle
+This function takes in an integer array of an size and returns the array. The array will be returned shuffled using a Fisher–Yates shuffle.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
+
+### NewRandom
+This function takes in an integer and returns a long value. The entered integer is used as a range to generate the random value. When the function is called a key is set for the object so every consecutive call of the random function will have the same key.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. As well as testing to make sure random can generate all values within the range.
+
+### RockPaperScissors
+This function will take in a string value and return a boolean value. The string value passed is the users selection and must equal "rock", "paper", or "scissors". The boolean value passed back is whether the user won or lose(Tie will return false).
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case simply passes through expected values.
+
+### EuclideanDistance
+This function takes in 4 double values representing x1,y1,x2,y2 and returns a double value. The returned value will be the distance between the coordinates passed through the function.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case simply passes through expected values.
+
+### BubbleSortASC and BubbleSortDES
+These two functions take in an integer array and returns the array sorted. These functions use bubble sort to return the sorted array. BubbleSortASC returns the array sorted in ascending order and BubbleSortDES return the array sorted in descending order.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
+
+### InsertionSortASC and InsertionSortDES
+These two functions take in an integer array and returns the array sorted. These functions use insertion sort to return the sorted array. InsertionSortASC returns the array sorted in ascending order and InsertionSortDES returns the array sorted in descending order.
+Testing:
+Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
 
 
 
+
+## Alex
+
+## Iliya
+
+## Scott
 
 
 
