@@ -51,6 +51,10 @@ Testing of this function includes testing for both correctness and timeout condi
 
 
 ## Alex
+### isPrime
+This function takes an integer as an input into the function. It will start a for loop from 2 until half the value of the number and check if there are any numbers divisible therefore checking if it is prime.
+Testing:
+Testing of this function includes testing for correctness and timeout conditions for both large and small numbers. This involves inputting small numbers while increasing the number to test the timeout conditions. 
 
 ## Iliya
 
