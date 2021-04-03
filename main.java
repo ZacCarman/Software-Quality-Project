@@ -621,5 +621,19 @@ public class main {
 
         return (i+1);
     }
+    //function to check if a value is prime or not
+    public static boolean isPrime(int input)
+    {
+    	boolean prime = true;
+    	for(int i = 2; i <= input/2; i++)
+    	{
+    		if(input % i == 0)
+    		{
+    			prime = false;
+    			break;
+    		}
+    	}
+    	return prime;
+    }
 
 }
