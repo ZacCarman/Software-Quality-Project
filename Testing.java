@@ -416,5 +416,23 @@ public class Testing {
     	assertTimeout(ofSeconds(1), () -> main.isPrime(18));
     	assertTimeout(ofSeconds(1), () -> main.isPrime(104287));
     }
+    
+    @Test
+    public void hypotenuse()
+    {
+    	System.out.println("Testing hypotenuse function");
+    	Assert.assertEquals(10, main.hypotenuse(8, 6));
+    	assertTimeout(ofSeconds(1), ()-> main.hypotenuse(18, 250));
+    	assertTimeout(ofSeconds(1), ()-> main.hypotenuse(18000, 2500));
+    }
+	
+	@Test
+    public void triangleLeg()
+    {
+    	System.out.println("Testing triangleLeg function");
+    	Assert.assertEquals(84, main.hypotenuse(105, 63));
+    	assertTimeout(ofSeconds(1), ()-> main.triangleLeg(1850, 250));
+    	assertTimeout(ofSeconds(1), ()-> main.triangleLeg(18000, 2500));
+    }
 
 }
