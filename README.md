@@ -56,6 +56,16 @@ This function takes an integer as an input into the function. It will start a fo
 Testing:
 Testing of this function includes testing for correctness and timeout conditions for both large and small numbers. This involves inputting small numbers while increasing the number to test the timeout conditions. 
 
+### hypotenuse
+This function takes two lengths of a triangle and calculates the hypotenuse. 
+Testing:
+Testing of this function includes testing for correctness and timeout conditions for both large and small numbers. This involves inputting small numbers while increasing the number to test the timeout conditions. 
+
+### triangeLeg
+This function takes one leg and the hypotenuse of the triangle and calculates the missing leg. 
+Testing:
+Testing of this function includes testing for correctness and timeout conditions for both large and small numbers. This involves inputting small numbers while increasing the number to test the timeout conditions. 
+
 ## Iliya
 
 ## Scott
