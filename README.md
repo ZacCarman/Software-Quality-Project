@@ -66,7 +66,39 @@ This function takes one leg and the hypotenuse of the triangle and calculates th
 Testing:
 Testing of this function includes testing for correctness and timeout conditions for both large and small numbers. This involves inputting small numbers while increasing the number to test the timeout conditions. 
 
+
+
+
 ## Iliya
+### quick_sort
+This function accepts an array a low index and a high index both integer, it chooses a piviot within the index range and finds the correct spot for that number in a sorted array
+all larger numbers go to a higher index and the lower ones receive lower  indexes. It does this recursively until the array is sorted.
+Testing:
+The code will have to sort a premade list that exploits certain situations like multiple instances of the same number. It will then compare the array it sorted to another premade
+array that is the exact same as the original however it is manually sorted. If all the numbers are the same the test is passed.
+
+### select_sort
+This  function accepts an unsorted array. It then loops through the array to visit every index while having a nested forloop finding the smallest number each time swaping the smallest number and the number at the current index. The array will eventually be sorted.
+Testing:
+The test is the same as quicksort with a 1 sorted and 1 unsorted premade list, the function is called to sort the unsorted list. Finally the 2 lists are compared.
+
+### role_dice
+This function requires no input. It simply generates a number between and including 1-6 and returns the generated value.
+Testing:
+The funcion is asked to generate a number. If it is between 1 and 6 it will pass the test.
+
+### read_file
+This function acceptes a string. This input should be the location and name of a file. It will then throw an exception if it cannot find the file or if it does it will read the contents of the file.
+Testing:
+The test is if the file can be read. It will ask the user for a file to read. If it can find and read the file it will pass the test. If an exception is thrown aor the code crashes the test is failed.
+
+### backwards_list_2
+This function will take an array and reverse their order. It is different from reverseArray because rather then reading the array backwards into a new array, it keeps the same array and swaps mirrored indexes across the middle. This upgrade effectvily halves the time and space required to execute the code.
+Testting:
+Similar to the previous 2 sorts. It has an original array and the same array backwards. The function is called to reverse one of them. Then we compare the 2 arrays. If they are the same the test passes.
+
+
+
 
 ## Scott
 
