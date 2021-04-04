@@ -1,4 +1,6 @@
 import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.Math;
 
 public class main {
@@ -570,6 +572,67 @@ public class main {
         // return a list for ease of testing
         return list;
     }
+    
+	//Iliya Karac
+	//Generates a random number from 1 to 6
+	public static int roll_dice() {
+		Random rand = new Random();
+		int dice = rand.nextInt(6) + 1; 
+		
+		return dice;
+	}
+	
+	//Iliya Karac
+	//accepts a file location and name and reads the file at that location
+	public static void read_file(String file_name) throws FileNotFoundException {
+		
+		Scanner file = new Scanner(new File(file_name));
+		
+		while(file.hasNext()) {
+			String line = file.nextLine();
+			System.out.println(line);	
+		}
+	}
+    
+    //Iliya Karac
+    //Function will take an array and return it in reverse order from what it was given
+    //it is practical yet  and likely would have been use in a few of the prior functions if it was implemented earlier 
+	public static int[] backwards_list_2(int[] list) {
+		int length = list.length;
+		//the first 3 if statements branch off cases where the code would run incorrectly  
+		if(length == 0) {
+			//just need to branch off this exception case from main code
+		}
+		else if(length == 1) {//just need to branch off this exception case from main code
+		}	
+		//the reason this cases is need is because if it was run in the main for loop it would reverse the list then reverse it again returning it to it's original state
+		else if(length == 2) {	
+			int tmp_num = list[0];
+			list[0] = list[1];
+			list[1] = tmp_num;	
+		}
+		//for cases where there are an odd number of elements
+		else if(length % 2 == 0) {
+			//loop until you reach the middle
+			for(int x = 0; x <= length/2; x++ ) {	
+				//replace the the number at x with the number that is equally distant from the end as x is from the start
+				int tmp_num = list[x];
+				list[x] = list[length-x-1];
+				list[length-x-1] = tmp_num;	
+			}	
+		}
+		// same logic as the previous but for lists with an odd number of elements
+		else {
+			for(int x = 0; x < length/2; x++ ) {
+				int tmp_num = list[x];
+				list[x] = list[length-x-1];
+				list[length-x-1] = tmp_num;
+				
+			}
+			
+		}
+		return list;
+	}
 
 
 
@@ -621,6 +684,9 @@ public class main {
 
         return (i+1);
     }
+    
+    
+    
     //function to check if a value is prime or not
     public static boolean isPrime(int input)
     {

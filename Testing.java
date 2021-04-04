@@ -4,8 +4,11 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import static java.time.Duration.ofSeconds;
+
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.ArrayList;
+
 
 
 
@@ -405,6 +408,30 @@ public class Testing {
         assertTrue(match);
     }
     
+    @Test 
+    public void roll_test() {
+    	int dice = main.roll_dice();
+    	boolean test = false;
+    	if(dice > 0 || dice < 7) test = true;
+    	assertTrue(test);
+    }
+    
+    @Test
+    public void reverse_test() {
+    	int[] process = {1,2,3,4,5};
+    	int[] correct = {5,4,3,2,1};
+    	boolean match = true;
+    	int[] processed = main.backwards_list_2(process);
+   
+    	for (int z = 0; z < correct.length; z++) {
+            if (processed[z] != correct[z]) {
+                match = false;
+            }
+        }
+    	assertTrue(match);
+    }
+    
+    
     @Test
     public void isPrimeTest()
     {
@@ -434,5 +461,23 @@ public class Testing {
     	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(1850, 250));
     	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(18000, 2500));
     }
+	
+	@Test
+	
+	public void read_file_test() throws FileNotFoundException {
+		boolean no_crash = true;
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("Please enter the location and name of a file you wish to read and remember to put 2 backslashes for everyone you see");
+		System.out.println("Example: C:\\\\Directory\\\\Directory2\\\\Desktop\\\\file.txt");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		Scanner in = new Scanner(System.in);
+		String file = in.nextLine();
+		main.read_file(file);
+		assertTrue(no_crash);
+	}
 
 }
