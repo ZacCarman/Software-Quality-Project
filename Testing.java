@@ -404,5 +404,17 @@ public class Testing {
 
         assertTrue(match);
     }
+    
+    @Test
+    public void isPrimeTest()
+    {
+    	System.out.println("Testing isPrime function");
+    	Assert.assertEquals(true, main.isPrime(7));
+    	Assert.assertEquals(true, main.isPrime(11));
+    	Assert.assertEquals(false, main.isPrime(24));
+    	Assert.assertEquals(true, main.isPrime(104287));
+    	assertTimeout(ofSeconds(1), () -> main.isPrime(18));
+    	assertTimeout(ofSeconds(1), () -> main.isPrime(104287));
+    }
 
 }
