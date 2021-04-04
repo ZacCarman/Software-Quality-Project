@@ -427,12 +427,12 @@ public class Testing {
     }
 	
 	@Test
-    public void triangleLeg()
+    public void triangeLeg()
     {
     	System.out.println("Testing triangleLeg function");
-    	Assert.assertEquals(84, main.hypotenuse(105, 63));
-    	assertTimeout(ofSeconds(1), ()-> main.triangleLeg(1850, 250));
-    	assertTimeout(ofSeconds(1), ()-> main.triangleLeg(18000, 2500));
+    	Assert.assertEquals(84, main.triangeLeg(105, 63));
+    	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(1850, 250));
+    	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(18000, 2500));
     }
 
 }
