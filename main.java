@@ -635,5 +635,21 @@ public class main {
     	}
     	return prime;
     }
+    
+       //Find hypotenuse length of triangle
+    public static double hypotenuse(double a, double b)
+    {
+    	double c = 0;
+    	c = Math.sqrt((a*a)+(b*b));
+    	return c;
+    }
+    
+    //Find missing leg of triangle
+    public static double triangeLeg(double c, double b)
+    {
+    	double a = 0;
+    	a = Math.sqrt((c*c)-(b*b));
+    	return a;
+    }
 
 }
