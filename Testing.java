@@ -448,7 +448,7 @@ public class Testing {
     public void hypotenuse()
     {
     	System.out.println("Testing hypotenuse function");
-    	Assert.assertEquals(10, main.hypotenuse(8, 6));
+    	Assert.assertEquals(10, main.hypotenuse(8, 6), 0.1);
     	assertTimeout(ofSeconds(1), ()-> main.hypotenuse(18, 250));
     	assertTimeout(ofSeconds(1), ()-> main.hypotenuse(18000, 2500));
     }
@@ -457,7 +457,7 @@ public class Testing {
     public void triangeLeg()
     {
     	System.out.println("Testing triangleLeg function");
-    	Assert.assertEquals(84, main.triangeLeg(105, 63));
+    	Assert.assertEquals(84, main.triangeLeg(105, 63), 0.1);
     	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(1850, 250));
     	assertTimeout(ofSeconds(1), ()-> main.triangeLeg(18000, 2500));
     }
