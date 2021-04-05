@@ -1,7 +1,7 @@
 # Software-Quality-Project
 
-## Zac
 
+## Zac
 ### IndexCollect
 This function takes in an integer array of any size and an integer value. The function will return and integer arraylist of all indexes the entered value appears in the given array.
 Testing:
@@ -85,7 +85,7 @@ The test is the same as quicksort with a 1 sorted and 1 unsorted premade list, t
 ### role_dice
 This function requires no input. It simply generates a number between and including 1-6 and returns the generated value.
 Testing:
-The funcion is asked to generate a number. If it is between 1 and 6 it will pass the test.
+The function is asked to generate a number. If it is between 1 and 6 it will pass the test.
 
 ### read_file
 This function acceptes a string. This input should be the location and name of a file. It will then throw an exception if it cannot find the file or if it does it will read the contents of the file.
@@ -94,13 +94,21 @@ The test is if the file can be read. It will ask the user for a file to read. If
 
 ### backwards_list_2
 This function will take an array and reverse their order. It is different from reverseArray because rather then reading the array backwards into a new array, it keeps the same array and swaps mirrored indexes across the middle. This upgrade effectvily halves the time and space required to execute the code.
-Testting:
-Similar to the previous 2 sorts. It has an original array and the same array backwards. The function is called to reverse one of them. Then we compare the 2 arrays. If they are the same the test passes.
+Testing:
+Similar to the previous 2 sorts. It has an original array, and the same array backwards. The function is called to reverse one of them. Then we compare the 2 arrays. If they are the same the test passes.
 
 
 
 
 ## Scott
+### MergeSort
+Testing:
+
+### BinarySearch
+Testing:
+
+### RollMultiDie
+Testing:
 
 
 

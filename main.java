@@ -376,9 +376,8 @@ public class main {
 
     /*******************************************************************************************
      * SCOTT
-     * Function to sort array of integers using
      * Merge Sort in ascending and descending order.
-     ********************************************************************************************/
+     *******************************************************************************************/
 
     public static int[] merge(int arr[], int left, int mid, int right) {
 
@@ -429,7 +428,7 @@ public class main {
         return arr;
     }
 
-    public static int[] msort(int[] arr, int left, int right) {
+    public static int[] MergeSort(int[] arr, int left, int right) {
         // arr is the input array, left is left most index, and right is right most. mid is middle
 
         if (right > left) {
@@ -437,8 +436,8 @@ public class main {
             int mid = (left + right) / 2;
 
             // recursively sort the first and second sub-arrays
-            msort(arr, left, mid);
-            msort(arr, mid + 1, right);
+            MergeSort(arr, left, mid);
+            MergeSort(arr, mid + 1, right);
 
             // merge the 2 sub-arrays
             merge(arr, left, mid, right);
@@ -448,8 +447,49 @@ public class main {
     }
 
     /*******************************************************************************************
+     * Binary Search
+     * This function will take in an integer array, the left and right index, and the value one
+     * is searching for. If it exists, the index of this value will be returned.
+     *******************************************************************************************/
+
+    public static int BinarySearch(int arr[], int left, int right, int value) {
+        if (right >= left) {
+            int middle = left + (right - left) / 2;
+            if (arr[middle] == value) {
+                return middle;
+            }
+            if (arr[middle] > value) {
+                return BinarySearch(arr, left, (middle - 1), value);
+            } else {
+                return BinarySearch(arr, (middle + 1), right, value);
+            }
+        } else {
+            return -1; // element value cannot be found in the input array
+        }
+    }
+
+
+    /*******************************************************************************************
+     * RollMultiDie takes in any number of die, and it can have as many sides as desired.
+     * (Could come in handy for role-playing game implementations.)
+     *******************************************************************************************/
+
+    public static int RollMultiDie(int n, int m) {
+        int numberOf = n;
+        int sides = m;
+        int roll = 0;
+
+        // for each die, roll then add to the total
+        for (int i = 0; i <= numberOf; i++) {
+            roll += (int) (Math.random() * sides) + 1;
+        }
+
+        return roll;
+    }
+
+    /*******************************************************************************************
      * END SCOTT
-     ********************************************************************************************/
+     ******************************************************************************************/
 
     /*Alexander Papachristu
      * sort function that builds a heap from an inputted array
