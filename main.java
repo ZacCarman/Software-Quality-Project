@@ -470,7 +470,8 @@ public class main {
 
 
     /*******************************************************************************************
-     * RollMultiDie takes in any number of die, and it can have as many sides as desired.
+     * RollMultiDie
+     * This function takes in any number of die, and it can have as many sides as desired.
      * (Could come in handy for role-playing game implementations.)
      *******************************************************************************************/
 
