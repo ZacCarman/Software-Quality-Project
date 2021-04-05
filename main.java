@@ -68,24 +68,24 @@ public class main {
     }
 
 
-        //ZAC
-        //Function to shuffle and return any int array
-        public static int[] shuffle(int[] shuffle){
-            Random random= new Random();
-            //getting length
-            int length=shuffle.length;
-            //loop for length in reverse
-            for(int x=length-1; x>0;x--){
-                //generate random indexes
-                int index =random.nextInt(x+1);
-                //Swap
-                int hold = shuffle[index];
-                shuffle[index]=shuffle[x];
-                shuffle[x]=hold;
-            }
-
-            return shuffle;
+    //ZAC
+    //Function to shuffle and return any int array
+    public static int[] shuffle(int[] shuffle){
+        Random random= new Random();
+        //getting length
+        int length=shuffle.length;
+        //loop for length in reverse
+        for(int x=length-1; x>0;x--){
+            //generate random indexes
+            int index =random.nextInt(x+1);
+            //Swap
+            int hold = shuffle[index];
+            shuffle[index]=shuffle[x];
+            shuffle[x]=hold;
         }
+
+        return shuffle;
+    }
     //ZAC
     //Function to generate sudo random value from 0-range
     //Creating value to hold seed
