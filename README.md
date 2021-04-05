@@ -51,6 +51,14 @@ Testing of this function includes testing for both correctness and timeout condi
 
 
 ## Alex
+### printArray
+This function is a simple way to print an array. 
+Testing:
+Testing of this function includes making sure the function prints the correct array and the complete array.
+## heapify
+This function uses a heapsort algorithm to sort an array of values.
+Testing:
+Testing of this function includes checking the correctness of the sort, as well as testing the time constraints. We want to make sure the function can sort an array of varying sizes within 1 second.
 ### isPrime
 This function takes an integer as an input into the function. It will start a for loop from 2 until half the value of the number and check if there are any numbers divisible therefore checking if it is prime.
 Testing:
