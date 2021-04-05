@@ -466,16 +466,8 @@ public class Testing {
 	
 	public void read_file_test() throws FileNotFoundException {
 		boolean no_crash = true;
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println("Please enter the location and name of a file you wish to read and remember to put 2 backslashes for everyone you see");
-		System.out.println("Example: C:\\\\Directory\\\\Directory2\\\\Desktop\\\\file.txt");
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		Scanner in = new Scanner(System.in);
-		String file = in.nextLine();
+
+		String file = "Please enter a txt file name and location using the windows path, make sure that every backslash is paired with an additional one";
 		main.read_file(file);
 		assertTrue(no_crash);
 	}

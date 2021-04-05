@@ -576,7 +576,8 @@ public class main {
 	//Iliya Karac
 	//Generates a random number from 1 to 6
 	public static int roll_dice() {
-		int dice = (int) NewRandom(6)+1;
+		Random rand = new Random();
+		int dice = (int) rand.nextInt(6)+1;
 		return dice;
 	}
 	
