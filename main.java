@@ -67,24 +67,25 @@ public class main {
         return max;
     }
 
-    //ZAC
-    //Function to shuffle and return any int array
-    public static int[] shuffle(int[] shuffle){
-        //getting length
-        int length=shuffle.length;
-        //loop for length in reverse
-        for(int x=length-1; x>0;x--){
-            //generate random indexes
-            int index =(int)NewRandom(x+1);
-            //Swap
-            int hold = shuffle[index];
-            shuffle[index]=shuffle[x];
-            shuffle[x]=hold;
+
+        //ZAC
+        //Function to shuffle and return any int array
+        public static int[] shuffle(int[] shuffle){
+            Random random= new Random();
+            //getting length
+            int length=shuffle.length;
+            //loop for length in reverse
+            for(int x=length-1; x>0;x--){
+                //generate random indexes
+                int index =random.nextInt(x+1);
+                //Swap
+                int hold = shuffle[index];
+                shuffle[index]=shuffle[x];
+                shuffle[x]=hold;
+            }
+
+            return shuffle;
         }
-
-        return shuffle;
-    }
-
     //ZAC
     //Function to generate sudo random value from 0-range
     //Creating value to hold seed
@@ -572,7 +573,7 @@ public class main {
         // return a list for ease of testing
         return list;
     }
-    
+
 	//Iliya Karac
 	//Generates a random number from 1 to 6
 	public static int roll_dice() {
@@ -580,45 +581,45 @@ public class main {
 		int dice = (int) rand.nextInt(6)+1;
 		return dice;
 	}
-	
+
 	//Iliya Karac
 	//accepts a file location and name and reads the file at that location
 	public static void read_file(String file_name) throws FileNotFoundException {
-		
+
 		Scanner file = new Scanner(new File(file_name));
-		
+
 		while(file.hasNext()) {
 			String line = file.nextLine();
-			System.out.println(line);	
+			System.out.println(line);
 		}
 	}
-    
+
     //Iliya Karac
     //Function will take an array and return it in reverse order from what it was given
-    //it is practical yet  and likely would have been use in a few of the prior functions if it was implemented earlier 
+    //it is practical yet  and likely would have been use in a few of the prior functions if it was implemented earlier
 	public static int[] backwards_list_2(int[] list) {
 		int length = list.length;
-		//the first 3 if statements branch off cases where the code would run incorrectly  
+		//the first 3 if statements branch off cases where the code would run incorrectly
 		if(length == 0) {
 			//just need to branch off this exception case from main code
 		}
 		else if(length == 1) {//just need to branch off this exception case from main code
-		}	
+		}
 		//the reason this cases is need is because if it was run in the main for loop it would reverse the list then reverse it again returning it to it's original state
-		else if(length == 2) {	
+		else if(length == 2) {
 			int tmp_num = list[0];
 			list[0] = list[1];
-			list[1] = tmp_num;	
+			list[1] = tmp_num;
 		}
 		//for cases where there are an odd number of elements
 		else if(length % 2 == 0) {
 			//loop until you reach the middle
-			for(int x = 0; x <= length/2; x++ ) {	
+			for(int x = 0; x <= length/2; x++ ) {
 				//replace the the number at x with the number that is equally distant from the end as x is from the start
 				int tmp_num = list[x];
 				list[x] = list[length-x-1];
-				list[length-x-1] = tmp_num;	
-			}	
+				list[length-x-1] = tmp_num;
+			}
 		}
 		// same logic as the previous but for lists with an odd number of elements
 		else {
@@ -626,9 +627,9 @@ public class main {
 				int tmp_num = list[x];
 				list[x] = list[length-x-1];
 				list[length-x-1] = tmp_num;
-				
+
 			}
-			
+
 		}
 		return list;
 	}
@@ -683,9 +684,9 @@ public class main {
 
         return (i+1);
     }
-    
-    
-    
+
+
+
     //function to check if a value is prime or not
     public static boolean isPrime(int input)
     {
@@ -700,7 +701,7 @@ public class main {
     	}
     	return prime;
     }
-    
+
        //Find hypotenuse length of triangle
     public static double hypotenuse(double a, double b)
     {
@@ -708,7 +709,7 @@ public class main {
     	c = Math.sqrt((a*a)+(b*b));
     	return c;
     }
-    
+
     //Find missing leg of triangle
     public static double triangeLeg(double c, double b)
     {
