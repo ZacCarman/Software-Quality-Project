@@ -1,5 +1,18 @@
 # Software-Quality-Project
 
+## implementation
+To import the Quality of Life libray download the QOL_lib.jar file and rember the location you stored it in.
+Open eclipse or any development environment you are using and right click on the project you wish to implement the library to.
+Go down and select properties or press Alt+Enter.
+Select java build path on the left hand side then click libraires tab located at the top of that window.
+Add External JAR is now on the right side of the window, click on it and browse to where you saved QOL_lib.jar on your computer.
+Now press allow and close. You have successfully imported the library.
+
+### using the library
+At the top of the document type in:   import QOL.support_functions;
+Then in the method you wish to use the function you must create an instance of the library class like so:    support_functions sp = new support_functions();
+Now you can use all the functions from the library. Example, i wish to create a variable to store a dice roll:    int var = sp.roll_dice();
+
 
 ## Zac
 ### IndexCollect
