@@ -327,6 +327,58 @@ public class Testing {
     }
 
     @Test
+    public void BinarySearch()
+    {
+        Random ran = new Random();
+        System.out.println("Testing Binary Search");
+        int[] Test1 = new int[]{ 1,4,3,1,5 };
+        int input_value = 3;
+        int expected_output = 2;
+
+        assertTrue(expected_output == (main.BinarySearch(Test1, 0, (Test1.length) - 1, input_value)));
+        assertTimeout(ofSeconds(1), () -> main.BinarySearch(Test1, 0, (Test1.length) - 1, input_value));
+
+        //Creating test array 2 and filling with random variables
+        int[] Test2 = new int[100];
+        for(int i=0;i<Test2.length;i++)
+        {
+            Test2[i] = ran.nextInt();
+        }
+        //testing array 2
+        assertTimeout(ofSeconds(1), () -> main.BinarySearch(Test2, 0, (Test2.length) - 1, input_value));
+
+        //Creating test array 3 and filling with random variables
+        int[] Test3 = new int[1000];
+        for(int i=0;i<Test3.length;i++)
+        {
+            Test3[i] = ran.nextInt();
+        }
+        //testing array 3
+        assertTimeout(ofSeconds(1), () -> main.BinarySearch(Test3, 0, (Test3.length) - 1, input_value));
+    }
+
+    @Test
+    public void RollMultiDie()
+    {
+        Random ran = new Random();
+        System.out.println("Testing RollMultiDie");
+        int[] Test1 = new int[]{ 3,8 };
+        int[] Test2 = new int[]{ 1,20 };
+        int[] Test3 = new int[]{ 2,4 };
+        int roll1 = 10;
+        int roll2 = 13;
+        int roll3 = 4;
+
+        assertTrue((roll1 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll1 <= (main.RollMultiDie(Test1[0], Test1[1]))));
+        assertTrue((roll2 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll2 <= (main.RollMultiDie(Test1[0], Test1[1]))));
+        assertTrue((roll3 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll3 <= (main.RollMultiDie(Test1[0], Test1[1]))));
+
+        assertTimeout(ofSeconds(1), () -> (main.RollMultiDie(Test1[0], Test1[1])));
+        assertTimeout(ofSeconds(2), () -> (main.RollMultiDie(Test1[0], Test1[1])));
+        assertTimeout(ofSeconds(3), () -> (main.RollMultiDie(Test1[0], Test1[1])));
+    }
+
+    @Test
     public void HeapSortTest()
     {
         System.out.println("Testing heap sorting functions");
