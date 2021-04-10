@@ -467,7 +467,7 @@ public class Testing {
 	public void read_file_test() throws FileNotFoundException {
 		boolean no_crash = true;
 
-		String file = "Please enter a txt file name and location using the windows path, make sure that every backslash is paired with an additional one";
+        String file = "read_file_test.txt"; // "Please enter a txt file name and location using the Windows path, make sure that every backslash is paired with an additional one"
 		main.read_file(file);
 		assertTrue(no_crash);
 	}
