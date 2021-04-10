@@ -489,6 +489,22 @@ public class main {
     }
 
     /*******************************************************************************************
+     * CharCount
+     * This function takes in a string and counts then returns the number of
+     * characters in the string.
+     *******************************************************************************************/
+
+    public static int CharCount(String str) {
+        int count = 0;
+        String string = str;
+
+        for(int i = 0; i < string.length(); i++) {
+            count++;
+        }
+        return count;
+    }
+
+    /*******************************************************************************************
      * END SCOTT
      ******************************************************************************************/
 

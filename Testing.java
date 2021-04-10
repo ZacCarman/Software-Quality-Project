@@ -370,12 +370,26 @@ public class Testing {
         int roll3 = 4;
 
         assertTrue((roll1 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll1 <= (main.RollMultiDie(Test1[0], Test1[1]))));
-        assertTrue((roll2 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll2 <= (main.RollMultiDie(Test1[0], Test1[1]))));
-        assertTrue((roll3 >= (main.RollMultiDie(Test1[0], Test1[1]))) || (roll3 <= (main.RollMultiDie(Test1[0], Test1[1]))));
+        assertTrue((roll2 >= (main.RollMultiDie(Test2[0], Test2[1]))) || (roll2 <= (main.RollMultiDie(Test2[0], Test2[1]))));
+        assertTrue((roll3 >= (main.RollMultiDie(Test3[0], Test3[1]))) || (roll3 <= (main.RollMultiDie(Test3[0], Test3[1]))));
 
         assertTimeout(ofSeconds(1), () -> (main.RollMultiDie(Test1[0], Test1[1])));
         assertTimeout(ofSeconds(2), () -> (main.RollMultiDie(Test1[0], Test1[1])));
         assertTimeout(ofSeconds(3), () -> (main.RollMultiDie(Test1[0], Test1[1])));
+    }
+
+    @Test
+    public void CharCount()
+    {
+        Random ran = new Random();
+        System.out.println("Testing CharCount");
+        String Test1 = "This is Test 1.";
+        String Test2 = "This is definitely Test 2.";
+        int expected1 = 15;
+        int expected2 = 26;
+
+        assertTrue(expected1 == main.CharCount(Test1));
+        assertTrue(expected2 == main.CharCount(Test2));
     }
 
     @Test

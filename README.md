@@ -136,6 +136,11 @@ This function takes in a sorted array, the left-most index, the right-most index
 Much like the single die roll. However, this function allows multiple dice to be rolled for multiple contexts. It takes in the number of dice as one argument, and the number of sides for the die as another.
 <br />Testing: Inputs were given and compared against expected outputs. Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
 
+### CharCount
+This function takes in a string and counts then returns the number of characters in the string.
+<br />Testing: Inputs were given and compared against expected outputs. Testing of this function includes testing for both correctness and timeout conditions. This test case involves passing through assigned variables and increasing amount of random variables for timeout conditions.
+
+
 
 
 
